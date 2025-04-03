@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVille</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <canvas id="game_particles"></canvas>
+        <h1>EcoVille</h1>
+        <h2>Welcome to EcoVille, where you can build your own city!</h2>
+    </header>
+        <div id="welcome-buttons" class="responsive-container">
+            <input type="text" id="player-name" placeholder="Entrez votre nom" style="padding: 10px; font-size: 16px; margin-bottom: 20px;">
+            <button class="action-button" id="start-button">Start Game</button>
+            <button class="action-button" id="rules">Rules</button>
+            <button class="action-button" id="scores">Meilleurs Scores</button>
+        </div>
+        <div id="game-container" style="display: none;">
+            <canvas id="game-canvas"></canvas>
+        </div>
+
+</body>
+<script src="game.js" defer></script>
+<script>
+    document.getElementById('start-button').addEventListener('click', function() {
+        const playerName = document.getElementById('player-name').value.trim();
+        if (!playerName) {
+            alert("Veuillez entrer votre nom avant de commencer !");
+            return;
+        }
+        window.location.href = 'game_board.html';
+    });
+
+    document.getElementById('rules').addEventListener('click', function() {
+        window.location.href = 'rules.html';
+    });
+
+    document.getElementById('scores').addEventListener('click', function() {
+        window.location.href = 'scores.html';
+    });
+</script>
+</html>

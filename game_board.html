@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: aliceblue;">
+    <header>
+        <nav class="menu_bar">
+            <div class="tool_bar">
+                <button class="action-button" id="menu-button" >Menu</button>
+                <button class="action-button" id="rules-button">Rules</button>
+            </div>
+            <ul class="ressources">
+                <li id="budget-indicator">💰 Budget: 1000€</li>
+                <li id="pollution-indicator">🌫 Pollution: 50%</li>
+                <li id="satisfaction-indicator">😊 Satisfaction: 50%</li>
+                <li id="green-energy-indicator">⚡ Énergie verte: 30%</li>
+            </ul>
+        </nav>
+    </header>
+    <main id="game-container" class="responsive-container">
+        <canvas id="game-canvas" width="1200" height="800">
+        <p id="error-message" style="color: red; display: none;">Erreur lors du chargement de la carte.</p></canvas>
+    </main>
+    <script src="game_board.js"></script>
+    <script>
+            document.getElementById('menu-button').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+
+        document.getElementById('rules-button').addEventListener('click', function() {
+        window.location.href = 'rules.html';
+    });
+
+    </script>
+    <script>
+    
+    </script>
+</body>
+</html>

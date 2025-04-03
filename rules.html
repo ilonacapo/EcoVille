@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules Of EcoVille</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Rules of EcoVille</h1>
+        <h2>Welcome to EcoVille, where you can build your own city!</h2>
+        <p>In EcoVille, you will be tasked with building a sustainable city while managing resources and ensuring the happiness of your citizens. Here are the rules:</p>
+        <button class="action-button" onclick="typeWriter()">Read!</button>
+    </header>
+    <script>
+        var i = 0;
+        var objectif = `📜 Règles du jeu – ÉcoVille<br>
+🟢 Objectif du jeu<br>
+Votre mission est de transformer une ville polluée en une cité écologique et agréable à vivre. Gérez vos ressources intelligemment et prenez les bonnes décisions pour réduire la pollution, améliorer la qualité de vie des habitants et développer les énergies vertes.<br><br>
+
+🔹 Déroulement du jeu<br>
+Le jeu se déroule en 20 tours maximum.<br>
+À chaque tour, vous pouvez effectuer des actions écologiques pour améliorer la ville.<br>
+La ville évolue progressivement en fonction de vos choix.<br><br>
+
+📊 Indicateurs à surveiller<br>
+💰 Budget – Utilisé pour financer les actions écologiques.<br>
+🌫 Pollution – Doit être réduite sous 20% pour gagner.<br>
+😊 Satisfaction des habitants – Si elle tombe sous 10%, vous perdez.<br>
+⚡ Énergie verte – Doit dépasser 60% pour améliorer la ville durablement.<br><br>
+
+🛠 Actions disponibles<br>
+Vous pouvez choisir parmi plusieurs actions à chaque tour :<br>
+Planter des arbres (-5% Pollution, coûte 100€)<br>
+Installer des panneaux solaires (+15% Énergie verte, coûte 250€)<br>
+Lancer un programme de recyclage (-8% Pollution, coûte 150€)<br>
+Améliorer les transports publics (-12% Pollution, coûte 300€)<br>
+Créer des espaces verts (+8% Satisfaction, coûte 200€)<br>
+Rénover les bâtiments (-10% Pollution, +5% Satisfaction, coûte 350€)<br><br>
+
+⚠ Événements aléatoires<br>
+À chaque tour, un événement spécial peut survenir :<br>
+🌪 Tempête (+5% Pollution, -5% Satisfaction)<br>
+💡 Innovation verte (-10% coût des panneaux solaires)<br>
+🤝 Mouvement citoyen (+10% Satisfaction)<br>
+📉 Crise économique (-200€ Budget)<br>
+🔬 Nouvelle technologie (+5% Énergie verte)<br><br>
+
+🏆 Condition de victoire<br>
+Vous gagnez si la Pollution est sous 20% avant la fin des 20 tours et que votre Énergie verte dépasse 60%.<br><br>
+
+❌ Condition de défaite<br>
+Si vous dépassez 20 tours sans atteindre les objectifs.<br>
+Si la Satisfaction tombe sous 10%.<br><br>
+➡ À vous de jouer ! Faites les bons choix et sauvez votre ville !`;
+
+        var speed = 50;
+
+        function typeWriter() {
+            if (i < objectif.length) {
+                if (objectif.charAt(i) === '<') {
+                    document.body.innerHTML += '<br>';
+                    i += 4;
+                } else {
+                    document.body.innerHTML += objectif.charAt(i);
+                    i++;
+                }
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; 2023 EcoVille. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

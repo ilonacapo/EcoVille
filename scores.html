@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meilleurs Scores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Meilleurs Scores</h1>
+        <button class="action-button" onclick="location.href='index.html'">Retour au menu</button>
+    </header>
+    <main>
+        <ul id="score-list" style="list-style: none; padding: 0; font-size: 18px; text-align: center;"></ul>
+    </main>
+    <script>
+        const scores = JSON.parse(localStorage.getItem('ecoVilleScores')) || [];
+        const scoreList = document.getElementById('score-list');
+
+        scores.sort((a, b) => b.score - a.score).forEach((entry, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${index + 1}. ${entry.name} - Score: ${entry.score}`;
+            scoreList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
